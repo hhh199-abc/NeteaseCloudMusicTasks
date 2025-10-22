@@ -47,7 +47,7 @@ else
 fi
 
 echo "开始安装 ServerlessFramework"
-sudo npm install -g serverless >>/dev/null
+sudo npm install -g serverless@3.38.0  # 强制安装3.x稳定版本 >>/dev/null
 sudo mkdir tmp/
 shopt -s extglob
 sudo mv !(tmp|serverless|public|code|.github|.git|ql_update.py|__pycache__|Dockerfile|.dockerignore|scheduler.py) tmp
