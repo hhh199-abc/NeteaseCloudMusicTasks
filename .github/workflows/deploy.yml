@@ -43,7 +43,7 @@ jobs:
           if [ $? -ne 0 ]; then
             exit 1;
           fi
-        env: |
+        env:  # 与run同级缩进
           SLS_GEO_LOCATION: no-cn  # 新增：设置地域环境变量
           STAGE: dev
           SERVERLESS_PLATFORM_VENDOR: tencent
