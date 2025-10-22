@@ -43,19 +43,17 @@ jobs:
           if [ $? -ne 0 ]; then
             exit 1;
           fi
-        env:  # 与run同级缩进
-          SLS_GEO_LOCATION: no-cn  # 新增：设置地域环境变量
-          STAGE: dev
-          SERVERLESS_PLATFORM_VENDOR: tencent
-          TENCENT_SECRET_ID: ${{ secrets.SECRET_ID }}
-          TENCENT_SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          CRON: ${{ secrets.CRON }}
-          REGION: ${{ secrets.REGION }}
-          FUNCTION_NAME: ${{ secrets.FUNCTION_NAME }}
-
-          DEFAULT_SONG_NUMER_CRON: "10 0 0 * * * *"
-          DEFAULT_CRON: "0 35 8 * * * *"
-          DEFAULT_REGION: "ap-guangzhou"
-          DEFAULT_FUNCTION_NAME: "NeteaseCloudMusicTasks"
-
-          SHA: ${{ github.sha }}
+        env:
+         SLS_GEO_LOCATION: no-cn
+         STAGE: dev
+         SERVERLESS_PLATFORM_VENDOR: tencent
+         TENCENT_SECRET_ID: ${{ secrets.SECRET_ID }}
+         TENCENT_SECRET_KEY: ${{ secrets.SECRET_KEY }}
+         CRON: ${{ secrets.CRON }}
+         REGION: ${{ secrets.REGION }}
+         FUNCTION_NAME: ${{ secrets.FUNCTION_NAME }}
+         DEFAULT_SONG_NUMER_CRON: "10 0 0 * * *"
+         DEFAULT_CRON: "0 35 8 * * *"
+         DEFAULT_REGION: "ap-guangzhou"
+         DEFAULT_FUNCTION_NAME: "NeteaseCloudMusicTasks"
+         SHA: ${{ github.sha }}
